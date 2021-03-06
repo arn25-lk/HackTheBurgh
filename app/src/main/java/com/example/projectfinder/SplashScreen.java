@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class spalsh_screen extends AppCompatActivity {
+public class SplashScreen extends AppCompatActivity {
 
     private TextView mTextView;
 
@@ -18,7 +18,7 @@ public class spalsh_screen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(spalsh_screen.this, MainActivity.class);
+                Intent i = new Intent(SplashScreen.this, LoginActivity.class);
                 startActivity(i);
 
                 finish();

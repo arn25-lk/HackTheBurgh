@@ -10,13 +10,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectFinder">
         <activity
+            android:name=".ChooseClassifications"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/Theme.ProjectFinder.NoActionBar"></activity>
+        <activity android:name=".RegisterUser" />
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".ChooseClassifications"/>
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.ProjectFinder.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>

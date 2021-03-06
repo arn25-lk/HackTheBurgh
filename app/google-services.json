@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "90096595518",
+    "project_id": "hacks-bdc2d",
+    "storage_bucket": "hacks-bdc2d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90096595518:android:66f7806f12838e35af576f",
+        "android_client_info": {
+          "package_name": "com.example.projectfinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "90096595518-t27tukluciq69jcgp5i8h6p300fhiba3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOQzDWzPwdcqD8t7tw3tQy7YMM2_VJmFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "90096595518-t27tukluciq69jcgp5i8h6p300fhiba3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

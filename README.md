@@ -1,4 +1,4 @@
-# Insert name (do we have a catchy name? ProjectED? 😅)
+# ProjectFinder
 Hack the Burgh 7
 
 ## Insipration

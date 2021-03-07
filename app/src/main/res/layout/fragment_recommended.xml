@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Recommended">
+    tools:context=".ExploreFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"/>
             <ImageView
                 android:layout_alignParentRight="true"
-                android:src="@drawable/profile"
+                android:src="@drawable/logo"
                 android:layout_width="62dp"
                 android:layout_height="62dp"/>
 
@@ -52,8 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
+
                 android:layout_margin="12dp">
 
                 <LinearLayout
@@ -82,8 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
+
                 android:layout_margin="12dp">
 
                 <LinearLayout
@@ -112,8 +110,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
+
                 android:layout_margin="12dp">
 
                 <LinearLayout
@@ -142,8 +139,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
+
                 android:layout_margin="12dp">
 
                 <LinearLayout
@@ -172,8 +168,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
+
                 android:layout_margin="12dp">
 
                 <LinearLayout
@@ -202,8 +197,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
+
                 android:layout_margin="12dp">
 
                 <LinearLayout

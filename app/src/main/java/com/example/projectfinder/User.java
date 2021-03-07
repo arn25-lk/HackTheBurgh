@@ -5,11 +5,13 @@ import java.util.ArrayList;
 public class User {
     String name;
     String email;
+
+
     ArrayList<String> userInterests;
-    public User(String name, String email){
+    public User(String name, String email, ArrayList<String> userInterests){
         this.name = name;
         this.email = email;
-        userInterests = new ChooseClassifications()
+        this.userInterests = userInterests;
     }
 
     public String getName() {
@@ -25,4 +27,13 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public ArrayList<String> getUserInterests() {
+        return userInterests;
+    }
+
+    public void setUserInterests(ArrayList<String> userInterests) {
+        this.userInterests = userInterests;
+    }
+
 }

@@ -24,6 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.annotations.NotNull;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirestoreRegistrar;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,14 +35,15 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     private ImageView banner;
     private static String userPreferences = "";
     static final int CHOOSE_STUFF = 30;
+    private FirebaseFirestore fStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_user);
         mAuth = FirebaseAuth.getInstance();
-        banner = (ImageView) findViewById(R.id.banner);
-        banner.setOnClickListener(this);
+
+
 
         editName = (EditText) findViewById(R.id.name);
         editName.setOnClickListener(this);
@@ -50,7 +52,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         editTextPassword = (EditText) findViewById(R.id.password);
         editTextPassword.setOnClickListener(this);
 
-
+        fStore = FirebaseFirestore.getInstance();
         findViewById(R.id.registerUser).setOnClickListener(this);
 
     }
@@ -92,10 +94,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         startActivityForResult(chooseStuff, 30);
 
 
-        Map<String, Object> user = new HashMap<>();
-        user.put("name", name);
-        user.put("email", email);
-        user.put("preferences", userPreferences);
+
 
 
         mAuth.createUserWithEmailAndPassword(email,password)
@@ -105,7 +104,18 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                     public void onComplete(Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             //TODO: Add user class
-                            FirebaseFirestore.getInstance().collection("users")
+                            DocumentReference documentReference = fStore.collection("users").document(mAuth.getCurrentUser().getUid());
+                            Map<String, Object> user = new HashMap<>();
+                            user.put("name", name);
+                            user.put("email", email);
+                            user.put("preferences", userPreferences);
+                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("TAG", "onSuccess: user Profile is created" + mAuth.getCurrentUser().getUid());
+                                }
+                            });
+                           /* FirebaseFirestore.getInstance().collection("users")
                                     .add(user)
                                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                         @Override
@@ -122,7 +132,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                                     "Failed to register user",
                                                     Toast.LENGTH_LONG).show();
                                         }
-                                    });
+                                    });*/
                         }else{
                             Toast.makeText(RegisterUser.this,
                                     "Failed to Register User",
@@ -153,11 +163,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(@NotNull View v) {
         switch(v.getId()){
-            case R.id.banner:
-                startActivity(new Intent(this, LoginActivity.class));
-                break;
             case R.id.registerUser:
-
                 registerUser();
                 break;
         }
